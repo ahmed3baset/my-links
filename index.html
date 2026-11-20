@@ -36,16 +36,32 @@
       font-size: 25px;
     }
 
+    /* Shows initials when the photo is missing, so the card never looks broken. */
     .avatar {
+      position: relative;
       width: 110px;
       height: 110px;
       margin: 0 auto 16px;
-      display: block;
-      object-fit: cover;
-      object-position: center top;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
       border-radius: 50%;
       border: 3px solid rgba(255, 255, 255, 0.3);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(145deg, #315c9b, #126b67);
+      color: #f8fafc;
+      font-size: 36px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .avatar img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
     }
 
     p {
@@ -103,8 +119,11 @@
   <main class="card">
     <h1>Ahmed Abdelbaset</h1>
 
-    <img class="avatar" src="./Me_3.jpg" alt="Ahmed Abdelbaset"
-         onerror="this.style.display='none'">
+    <div class="avatar" aria-label="Ahmed Abdelbaset">
+      AA
+      <!-- If you add Me_3.jpg next to this file, it replaces the initials. -->
+      <img src="./IMG_4888.jpeg" alt="" onerror="this.remove()">
+    </div>
 
     <p>I'd love to hear from you</p>
 
@@ -115,8 +134,8 @@
       <a href="https://github.com/ahmed3baset"
          target="_blank" rel="noopener noreferrer">GitHub</a>
 
-      <!-- Default: mailto (works on mobile and any device).
-           On desktop, the script below switches it to a Gmail compose window. -->
+      <!-- Mobile: mailto opens the device's mail app with the subject prefilled.
+           Desktop: the script below switches it to a Gmail compose window. -->
       <a class="email" id="emailLink"
          href="mailto:ah.abdelbasit@gmail.com?subject=Contact%20from%20your%20page">
         Email Me
