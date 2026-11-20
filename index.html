@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ahmed Abdelbaset | Contact Links</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      color: #f8fafc;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(145deg, #101827, #173b46, #126b67);
+    }
+
+    .card {
+      width: min(100%, 390px);
+      padding: 32px 24px;
+      text-align: center;
+      background: rgba(12, 23, 34, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: 25px;
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 16px;
+      display: block;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 50%;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    p {
+      margin: 0 0 24px;
+      color: #b8c8d2;
+    }
+
+    .links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .links a {
+      display: block;
+      padding: 15px;
+      border-radius: 13px;
+      color: #f8fafc;
+      text-decoration: none;
+      font-weight: bold;
+      background: #203440;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .links a:hover {
+      transform: translateY(-2px);
+      background: #28505a;
+    }
+
+    .links .whatsapp {
+      background: #128c60;
+    }
+
+    .links .whatsapp:hover {
+      background: #0f9f6c;
+    }
+
+    .links .email {
+      background: #315c9b;
+    }
+
+    .links .email:hover {
+      background: #3c70ba;
+    }
+
+    .footer {
+      margin-top: 22px;
+      font-size: 12px;
+      color: #91a5b1;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <h1>Ahmed Abdelbaset</h1>
+
+    <img class="avatar" src="./Me_3.jpg" alt="Ahmed Abdelbaset"
+         onerror="this.style.display='none'">
+
+    <p>I'd love to hear from you</p>
+
+    <nav class="links" aria-label="Contact links">
+      <a href="https://www.linkedin.com/in/ahmed3baset"
+         target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+      <a href="https://github.com/ahmed3baset"
+         target="_blank" rel="noopener noreferrer">GitHub</a>
+
+      <!-- Default: mailto (works on mobile and any device).
+           On desktop, the script below switches it to a Gmail compose window. -->
+      <a class="email" id="emailLink"
+         href="mailto:ah.abdelbasit@gmail.com?subject=Contact%20from%20your%20page">
+        Email Me
+      </a>
+
+      <a class="whatsapp"
+         href="https://wa.me/201032516987"
+         target="_blank" rel="noopener noreferrer">Contact via WhatsApp</a>
+    </nav>
+
+    <div class="footer">Choose the way that suits you best</div>
+  </main>
+
+  <script>
+    (function () {
+      var link = document.getElementById("emailLink");
+      var isDesktop = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+      if (link && isDesktop) {
+        link.href = "https://mail.google.com/mail/?view=cm&fs=1&to=ah.abdelbasit@gmail.com&su=Contact%20from%20your%20page";
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+      }
+    })();
+  </script>
+</body>
+</html>
